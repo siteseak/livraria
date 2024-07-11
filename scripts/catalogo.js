@@ -1,4 +1,4 @@
-[
+const catalogo = [
     {
         "titulo": "O Livro dos Espíritos",
         "autor": "Allan Kardec",
@@ -1084,4 +1084,4 @@
         "autor": "Carlos Torres Pastorino",
         "arquivo": "217.jpeg"
     }
-]
+];
