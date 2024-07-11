@@ -6,88 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Livros</title>
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .card-img-top {
-            height: 200px;
-            width: 100%;
-            object-fit: contain;
-        }
-
-        .card {
-            margin-bottom: 20px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <link href="styles/styles.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <h1 class="my-4">Critérios de pesquisa</h1>
         <div class="mb-4">
-            <input type="text" id="searchInput" class="form-control" placeholder="Digite o título ou autor">
+            <input type="text" id="searchInput" class="form-control" placeholder="Digite o título ou o autor">
         </div>
         <div class="row" id="catalogoContainer"></div>
     </div>
 
     <script src="scripts/catalogo.js"></script>
-    <script src="scripts/jquery-3.6.0.min.js"></script>
-    <script src="scripts/popper.min.js"></script>
-    <script src="bootstrap/bootstrap.bundle.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
-    <script>
-        const catalogoContainer = document.getElementById('catalogoContainer');
-        const searchInput = document.getElementById('searchInput');
-
-        function createCard(livro) {
-            return `
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="card">
-                        <img src="imagens/${livro.arquivo}" class="card-img-top" data-bs-toggle="modal" data-bs-target="#modal-${livro.arquivo}">
-                        <div class="card-body">
-                            <h5 class="card-title">${livro.titulo}</h5>
-                            <p class="card-text">${livro.autor}</p>
-                        </div>
-                    </div>
-                    <div class="modal fade" id="modal-${livro.arquivo}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">${livro.titulo}</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <img src="imagens/${livro.arquivo}" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function displayCatalogo(catalogo) {
-            catalogoContainer.innerHTML = catalogo.map(createCard).join('');
-        }
-
-        function filterCatalogo() {
-            const query = searchInput.value.toLowerCase();
-            const filteredCatalogo = catalogo.filter(livro =>
-                livro.titulo.toLowerCase().includes(query) || livro.autor.toLowerCase().includes(query)
-            );
-            displayCatalogo(filteredCatalogo);
-        }
-
-        searchInput.addEventListener('input', filterCatalogo);
-
-        document.addEventListener('DOMContentLoaded', () => {
-            displayCatalogo(catalogo);
-        });
-    </script>
+    <script src="scripts/scripts.js"></script>
 </body>
 
 </html>
