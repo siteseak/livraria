@@ -5,13 +5,13 @@ function createCard(livro) {
     return `
         <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="card">
-                <img src="imagens/${livro.arquivo}" class="card-img-top" data-bs-toggle="modal" data-bs-target="#modal-${livro.arquivo}">
+                <img src="imagens/${livro.arquivo}" class="card-img-top" data-bs-toggle="modal" data-bs-target="#modal-${removeFileExtension(livro.arquivo)}">
                 <div class="card-body">
                     <h5 class="card-title">${livro.titulo}</h5>
                     <p class="card-text">${livro.autor}</p>
                 </div>
             </div>
-            <div class="modal fade" id="modal-${livro.arquivo}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="modal-${removeFileExtension(livro.arquivo)}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -45,3 +45,7 @@ searchInput.addEventListener('input', filterCatalogo);
 document.addEventListener('DOMContentLoaded', () => {
     displayCatalogo(catalogo);
 });
+
+function removeFileExtension(filename) {
+    return filename.split('.').slice(0, -1).join('.');
+}

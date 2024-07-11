@@ -7,9 +7,22 @@
 .card {
     margin-bottom: 20px;
     transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
 }
 
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+    max-height: 80vh; /* Para garantir que a imagem não ultrapasse 80% da altura da tela */
 }
