@@ -22,9 +22,9 @@
 }
 
 .modal-body img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
-    max-height: 80vh; /* Para garantir que a imagem não ultrapasse 80% da altura da tela */
+    max-height: 70vh; /* Para garantir que a imagem não ultrapasse 70% da altura da tela */
 }
 
 .fixed-top-input {
