@@ -23,7 +23,7 @@ function createCard(livro) {
                         </div>
                         <div class="modal-footer">
                             <p class="mb-1 me-3">Mais informações ou compras via 
-                                <a href="https://wa.me/555132240309" target="_blank">WhatsApp<img src="imagens/wpp_icon.png" alt="WhatsApp" style="width: 20px; height: 20px; margin-left: 6px"></a>.
+                                <a href="https://wa.me/555132222644" target="_blank">WhatsApp<img src="imagens/wpp_icon.png" alt="WhatsApp" style="width: 20px; height: 20px; margin-left: 6px"></a>.
                             </p>
                         </div>                        
                     </div>
